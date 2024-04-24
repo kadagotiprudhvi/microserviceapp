@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment                                          # 1
+metadata:
+  name: demo-frontend
+  labels:
+    app: demo-frontend
+spec:
+  selector:
+    matchLabels:
+      app: demo-frontend
+  replicas: 3                                             # 2
+  minReadySeconds: 15
+  strategy:
+    type: RollingUpdate                                   # 3
+    rollingUpdate: 
+      maxUnavailable: 1                                   # 4
+      maxSurge: 1                                         # 5
+  template:
+    metadata:
+      labels:
+        app: demo-frontend                                  # 6
+    spec:
+      serviceAccountName: demo-frontend
+      containers:
+        - image: coitlearning/demo-frontend:v1
+          imagePullPolicy: IfNotPresent                         # 7
+          name: demo-frontend
+          livenessProbe:
+            exec:
+              command:
+              - ls
+              - /
+            initialDelaySeconds: 5
+            periodSeconds: 5
+          readinessProbe:
+            tcpSocket:
+              port: 80
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          resources:
+            requests:
+              cpu: 10m
+              memory: 250M
+            limits: 
+              cpu: 150m
+              memory: 450M
+          ports:
+            - containerPort: 80
+          env:
+            - name: JAVA_APP_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: demo-frontend-config
+                  key: JAVA_URL
+            - name: SMS_API
+              valueFrom:
+                configMapKeyRef:
+                  name: values-from-props
+                  key: sms_provider_api

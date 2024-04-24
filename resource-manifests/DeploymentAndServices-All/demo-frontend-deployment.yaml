@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment                                          # 1
+metadata:
+  name: demo-frontend
+  labels:
+    app: demo-frontend
+spec:
+  selector:
+    matchLabels:
+      app: demo-frontend
+  replicas: 2                                             # 2
+  minReadySeconds: 15
+  strategy:
+    type: RollingUpdate                                   # 3
+    rollingUpdate: 
+      maxUnavailable: 1                                   # 4
+      maxSurge: 1                                         # 5
+  template:
+    metadata:
+      labels:
+        app: demo-frontend                                  # 6
+        app.kubernetes.io/name: demo-frontend
+    spec:
+      containers:
+        - image: basilvarghese/demo-frontend:latest
+          imagePullPolicy: IfNotPresent                         # 7
+          name: demo-frontend
+          ports:
+            - containerPort: 80

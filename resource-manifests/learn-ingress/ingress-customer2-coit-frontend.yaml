@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: demo-frontend
+  namespace: customer2
+  annotations:
+    ingressClassName: nginx
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: "customer2.basilportfolio.com"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: demo-frontend-lb
+            port:
+              number: 80

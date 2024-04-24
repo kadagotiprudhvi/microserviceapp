@@ -1,0 +1,5 @@
+replicaCount: 2
+prometheus:
+  enabled: false
+webhook:
+  timeoutSeconds: 4

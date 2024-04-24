@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-backend1
+  labels:
+    app: demo-backend1
+spec:
+  selector:
+    matchLabels:
+      app: demo-backend1
+  replicas: 3
+  minReadySeconds: 15
+  strategy:
+    type: RollingUpdate
+    rollingUpdate: 
+      maxUnavailable: 1
+      maxSurge: 1 
+  template:
+    metadata:
+      labels:
+        app: demo-backend1
+    spec:
+      containers:
+      - image: coitlearning/demo-backend1:latest
+        imagePullPolicy: IfNotPresent
+        name: demo-backend1
+        ports:
+          - containerPort: 8080
+        volumeMounts:
+          - mountPath: /mnt
+            name: config-files
+          - mountPath: /var/lib/mysql
+            name: myappdata
+      volumes:
+        - name: config-files
+          configMap:
+            name: demo-backend1-cm-files
+        - name: myappdata
+          persistentVolumeClaim:
+            claimName: demo-backend1-myappdata
