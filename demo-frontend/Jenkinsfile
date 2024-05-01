@@ -1,42 +1,21 @@
-pipeline{
+pipeline {
     agent any
-    stages{
-        stage("Build"){
-            steps{
-                sh 'cd demo-frontend && npm install && npm run build'
+
+    stages {
+        stage("Build & making tar file") {
+            steps {
+                sh "cd demo-frontend && npm install && npm run build"
             }
         }
-        stage("Setup Env"){
-            steps{
-                sh "echo Installing Apache"
+        stage('making tar file') {
+            steps {
+                sh "tar -cvf npmtar.1.1.1.tar build"
             }
         }
-        stage("Deploy"){
-            steps{
-                sh "echo Deploying the build folder"
+        stage('pushing to nexus reo') {
+            steps {
+                sh 'curl -v -u maven:12345 --upload-file npmtar.1.1.1.tar "https://your-nexus-repo-url/repository/your-repository-name/npmtar.1.1.1.tar"'
             }
-        }
-        stage("Cleanup"){
-            steps{
-                deleteDir()
-            }
-        }
-    }
-    post{
-        success{
-            archiveArtifacts artifacts: '**/build', followSymlinks: false
-        }
-        failure{
-            emailext body: '''Jenkins has failed to build the Job. Please find the information below.
-
-                            Name of the Job: ${JOB_NAME}
-                            Build that failed: ${BUILD_NUMBER}
-
-                            Please check the logs at ${BUILD_URL}
-
-
-                            Thanks
-                            Jenkins''', subject: 'Failed ${JOB_NAME}', to: 'basil@coit.io'
         }
     }
 }
