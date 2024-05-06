@@ -9,7 +9,7 @@ pipeline {
             }
         }
 
-        stage('pushing to nexus reo') {
+        stage('unarchieve the tar file') {
             steps {
                 sh 'ssh ubuntu@3.19.209.116 tar -xvf npmtar.1.1.7.tar'
             }
