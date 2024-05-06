@@ -1,0 +1,12 @@
+pipeline {
+    agent any
+    
+    stages {
+        
+        stage("Build & making tar file") {
+            steps {
+                sh "cd demo-backend1 && mvn deploy"
+            }
+        }
+    }
+}
