@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+    
+    stages {
+        
+        stage("Build & making tar file") {
+            steps {
+                sh "tar -cvf pythontar-2.0.tar demo-backend2"
+            }
+        }
+        stage('pushing to nexus reo') {
+            steps {
+                sh 'curl -v -u jashu:12345 --upload-file pythontar-2.0.tar "http://13.201.73.18:8081/repository/python-repo/"'
+            }
+        }
+    }
+}
