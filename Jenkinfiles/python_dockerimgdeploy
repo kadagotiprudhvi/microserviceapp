@@ -1,0 +1,24 @@
+pipeline {
+    agent any
+
+    stages {
+        
+        stage("Build & making docker image") {
+            steps {
+                sh "cd demo-backend2 && docker build -t pythonimg:1.1.2 . -f Dockerfile"
+            }
+       }
+       
+       stage("docker tag") {
+            steps {
+                sh "docker tag pythonimg:1.1.2 prudhvi575/python_repo:1.1.2"
+            }
+       }
+       
+        stage('docker push') {
+            steps {
+                sh "docker push prudhvi575/python_repo:1.1.2"
+            }
+        }
+    }
+}
