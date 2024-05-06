@@ -5,7 +5,7 @@ pipeline {
         
         stage("Getting tar file from nexus") {
             steps {
-                sh "ssh ubuntu@3.19.209.116 "curl -u jashu:12345 -O -L 'http://3.109.2.102:8081/repository/maven-repo/com/sa/web/sentiment-analysis-web/mvn.1.1.0-SNAPSHOT/sentiment-analysis-web-mvn.1.1.0-20240503.080827-1.jar'""
+                sh "'ssh ubuntu@3.19.209.116 "curl -u jashu:12345 -O -L 'http://3.109.2.102:8081/repository/maven-repo/com/sa/web/sentiment-analysis-web/mvn.1.1.0-SNAPSHOT/sentiment-analysis-web-mvn.1.1.0-20240503.080827-1.jar'"'"
             }
         }
 
