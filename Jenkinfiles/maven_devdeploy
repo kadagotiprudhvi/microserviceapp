@@ -11,7 +11,7 @@
 
         stage('running java application') {
             steps {
-                sh "ssh ubuntu@3.19.209.116 'java -jar sentiment-analysis-web-mvn.1.1.0-20240503.080827-1.jar --sa.logic.api.url http://localhost:5000 &&'"
+                sh "ssh ubuntu@3.19.209.116 'java -jar sentiment-analysis-web-mvn.1.1.0-20240503.080827-1.jar --sa.logic.api.url http://localhost:5000 &'"
             }
         }
     }
