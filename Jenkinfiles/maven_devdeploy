@@ -1,1 +1,18 @@
+pipeline {
+    agent any
+    
+    stages {
+        
+        stage("Getting tar file from nexus") {
+            steps {
+                sh "curl -u jashu:12345 -O -L 'http://13.232.47.76:8081/repository/maven-repo/com/sa/web/sentiment-analysis-web/mvn.1.1.0-SNAPSHOT/sentiment-analysis-web-mvn.1.1.0-20240503.080827-1.jar'"
+            }
+        }
 
+        stage('running java application') {
+            steps {
+                sh 'java -jar sentiment-analysis-web-mvn.1.1.0-20240503.080827-1.jar --sa.logic.api.url http://localhost:5000'
+            }
+        }
+    }
+}
