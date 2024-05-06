@@ -18,7 +18,7 @@ pipeline {
 
         stage('copying build data to /var/www/html') {
             steps {
-                scp 'ssh@3.19.209.116 build/* /var/www/html'
+                scp build/* ubuntu@3.19.209.116:/var/www/html
             }
         }
     }
