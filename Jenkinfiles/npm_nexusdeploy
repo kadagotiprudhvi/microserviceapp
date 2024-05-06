@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+    
+    stages {
+  
+        stage("Build & making tar file") {
+            steps {
+                sh "cd demo-frontend && npm install && npm run build"
+                sh "cd demo-frontend && tar -cvf npmtar.1.1.7.tar build"
+            }
+        }
+        stage('pushing to nexus reo') {
+            steps {
+                sh 'curl -v -u jashu:12345 --upload-file demo-frontend/npmtar.1.1.7.tar "http://13.201.73.18:8081/repository/npm-repo/npmtar.1.1.7.tar"'
+            }
+        }
+    }
+}
