@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage("ssh & dockerpull") {
             steps {
-                sh "ssh ubuntu@18.219.233.229 'sudo docker pull prudhvi575/maven_repo:1.1.2'"
+                sh "ssh ubuntu@172.31.38.121 'sudo docker pull prudhvi575/maven_repo:1.1.2'"
             }
         }
     }
