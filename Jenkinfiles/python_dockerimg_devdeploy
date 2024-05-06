@@ -7,9 +7,9 @@ pipeline {
                 sh "ssh ubuntu@18.219.233.229 'sudo docker pull prudhvi575/python_repo:1.1.2'"
             }
         }
-        stage("ssh & dockerpull") {
+        stage("running docker img") {
             steps {
-                sh "ssh ubuntu@18.219.233.229 'sudo docker run -d prudhvi575/python_repo:1.1.2 '"
+                sh "ssh ubuntu@18.219.233.229 'sudo docker run -d prudhvi575/python_repo:1.1.2'"
             }
         }
     }
