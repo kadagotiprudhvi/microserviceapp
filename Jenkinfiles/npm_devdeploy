@@ -5,19 +5,19 @@ pipeline {
         
         stage("Getting tar file from nexus") {
             steps {
-                sh "ssh ubuntu@3.19.209.116 'curl -u jashu:12345 -O -L http://3.109.2.102:8081/repository/npm-repo/npmtar.1.1.7.tar'"
+                sh "ssh ubuntu@18.224.72.119 'curl -u jashu:12345 -O -L http://43.204.108.122:8081/repository/npm-repo/npmtar.1.1.7.tar'"
             }
         }
 
         stage('unarchieve the tar file') {
             steps {
-                sh 'ssh ubuntu@3.19.209.116 tar -xvf npmtar.1.1.7.tar'
+                sh 'ssh ubuntu@18.224.72.119 tar -xvf npmtar.1.1.7.tar'
             }
         }
 
         stage('copying build data to /var/www/html') {
             steps {
-                sh 'ssh ubuntu@3.19.209.116 cp -prf build/* /var/www/html'
+                sh 'ssh ubuntu@18.224.72.119 cp -prf build/* /var/www/html'
             }
         }
     }
