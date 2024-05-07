@@ -9,3 +9,11 @@ Before you begin, ensure you have the following prerequisites:
 • Python installed for Python development.<br>
 • JDK (Java Development Kit) installed for Java development.<br>
 • Access to a Nexus repository where you have permissions to deploy artifacts.<br>
+
+# Usage
+To use the script, follow the instructions below:
+
+# clone the code by running below command
+```
+git clone https://github.com/kadagotiprudhvi/microserviceapp.git
+```
