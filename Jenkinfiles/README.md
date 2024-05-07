@@ -37,7 +37,7 @@ npm run build
 ```
 tar -xzvf npm_build.tar.gz build
 ```
-# Push to Nexus Repository
+# Push to Nexus Repository of tar file
 • Replace maven:12345 with your Nexus repository credentials and http://3.110.40.233:8081/repository/tar-repo/npm-snap:1.0.0.tar <br>
   with your Nexus repository URL and file path.
 ```
@@ -80,7 +80,36 @@ cd .m2
   </servers>
 </settings>
 ```
-# To push maven to nexus repository use below command
+# To push Maven to Nexus repository, use the below command:
 ```
 ./ maven deploy
+```
+# Navigate to the Python Directory
+```
+cd microserviceapp/demo-backend2
+```
+# Install python
+```
+sudo apt-get update && sudo apt-get install -y python3
+```
+# Install pip
+```
+sudo apt-get update && sudo apt-get install -y python3-pip
+```
+# Run the pip command to download the dependencies
+```
+cd microserviceapp/demo-backend2/sa
+```
+```
+pip3 install -r requirements.txt
+```
+# Package the React Files for Nexus Repository
+```
+tar -xzvf pythonfile:1.0.0.tar.gz demo-backend2
+```
+# Push to Nexus Repository of tar file
+• Replace maven:12345 with your Nexus repository credentials and http://3.110.40.233:8081/repository/tar-repo/npm-snap:1.0.0.tar <br>
+  with your Nexus repository URL and file path.
+```
+curl -v -u maven:12345 --upload-file pythonfile:1.0.0.tar.gz "http://3.110.40.233:8081/repository/tar-repo/pythonfile:1.0.0.tar.gz"
 ```
