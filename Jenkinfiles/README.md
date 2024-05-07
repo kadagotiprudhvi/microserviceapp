@@ -43,6 +43,7 @@ tar -xzvf npm_build.tar.gz build
 ```
 curl -v -u maven:12345 --upload-file npm_snap:1.0.0.tar "http://3.110.40.233:8081/repository/tar-repo/npm-snap:1.0.0.tar"
 ```
+
 # Navigate to the Maven Directory
 ```
 cd microserviceapp/demo-backend1
@@ -58,11 +59,11 @@ sudo apt-get update && sudo apt-get install -y maven
 # Pushing to Nexus Repository
 To push to the Nexus repository, follow these steps:
 • When cloning the git repository, the pom.xml file will be located in the demo-backend1 directory and needs to be configured.<br>
-• When pushing to the Nexus repository, credentials need to be configured in the .m2 file.
+• When pushing to the Nexus repository, credentials need to be configured in the .m2/settings.xml file.
 ```
 cd .m2
 ```
-# In .m2 file create a file for settings.xml for credentials while maven deploy
+# In .m2/settings.xml, configure credentials for Maven deploy:
 ```
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
@@ -84,6 +85,7 @@ cd .m2
 ```
 ./ maven deploy
 ```
+
 # Navigate to the Python Directory
 ```
 cd microserviceapp/demo-backend2
@@ -97,13 +99,14 @@ sudo apt-get update && sudo apt-get install -y python3
 sudo apt-get update && sudo apt-get install -y python3-pip
 ```
 # Run the pip command to download the dependencies
+• Navigate to the directory containing requirements.txt:
 ```
 cd microserviceapp/demo-backend2/sa
 ```
 ```
 pip3 install -r requirements.txt
 ```
-# Package the React Files for Nexus Repository
+# Package the Python Files for Nexus Repository
 ```
 tar -xzvf pythonfile:1.0.0.tar.gz demo-backend2
 ```
