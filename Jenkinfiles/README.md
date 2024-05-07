@@ -5,7 +5,7 @@ This repository contains scripts and instructions for building a tar file contai
 Before you begin, ensure you have the following prerequisites:
 
 • Git installed on your local machine.<br>
-• npm installed for React development.
-• Python installed for Python development.
-• JDK (Java Development Kit) installed for Java development.
-• Access to a Nexus repository where you have permissions to deploy artifacts.
+• npm installed for React development.<br>
+• Python installed for Python development.<br>
+• JDK (Java Development Kit) installed for Java development.<br>
+• Access to a Nexus repository where you have permissions to deploy artifacts.<br>
