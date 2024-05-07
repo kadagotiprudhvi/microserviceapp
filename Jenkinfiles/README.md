@@ -38,14 +38,14 @@ npm run build
 tar -xzvf npm_build.tar.gz build
 ```
 # Push to Nexus Repository
-• Replace maven:12345 with your Nexus repository credentials and http://3.110.40.233:8081/repository/tar-repo/npm-snap:1.0.0.tar with your Nexus repository URL and 
-  file path.
+• Replace maven:12345 with your Nexus repository credentials and http://3.110.40.233:8081/repository/tar-repo/npm-snap:1.0.0.tar <br>
+  with your Nexus repository URL and file path.
 ```
 curl -v -u maven:12345 --upload-file npm_snap:1.0.0.tar "http://3.110.40.233:8081/repository/tar-repo/npm-snap:1.0.0.tar"
 ```
 # Navigate to the Maven Directory
 ```
-cd micorserviceapp/demo-backend1
+cd microserviceapp/demo-backend1
 ```
 # Install JDK
 ```
