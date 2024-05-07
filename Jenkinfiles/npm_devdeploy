@@ -18,7 +18,7 @@ pipeline {
 
         stage('copying build data to /var/www/html') {
             steps {
-                sh 'ssh ubuntu@18.224.72.119 cp -r build/* /var/www/html'
+                sh 'ssh ubuntu@18.224.72.119 sudo cp -r build/* /var/www/html'
             }
         }
     }
