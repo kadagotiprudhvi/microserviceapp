@@ -5,19 +5,13 @@ pipeline {
         
         stage("Getting tar file from nexus") {
             steps {
-                sh "ssh ubuntu@3.19.209.116 curl -u jashu:12345 -O -L 'http://13.232.47.76:8081/repository/python-repo/pythontar-2.0.tar'"
+                sh "ssh ubuntu@18.224.72.119 curl -u jashu:12345 -O -L 'http://43.204.108.122:8081/repository/python-repo/pythontar-2.0.tar'"
             }
         }
 
         stage('pushing to nexus reo') {
             steps {
-                sh 'ssh ubuntu@3.19.209.116 tar -xvf pythontar-2.0.tar'
-            }
-        }
-
-        stage('pushing to nexus reo') {
-            steps {
-                sh 'ssh ubuntu@3.19.209.116 'curl -v -u jashu:12345 --upload-file pythontar-2.0.tar http://13.232.47.76:8081/repository/python-repo/"'
+                sh 'ssh ubuntu@18.224.72.119 tar -xvf pythontar-2.0.tar'
             }
         }
     }
