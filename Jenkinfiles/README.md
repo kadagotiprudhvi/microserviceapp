@@ -17,3 +17,7 @@ To use the script, follow the instructions below:
 ```
 git clone https://github.com/kadagotiprudhvi/microserviceapp.git
 ```
+# This command navigates to correct directory path of the file
+```
+cd microserviceapp/demo-frontend
+```
