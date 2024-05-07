@@ -55,3 +55,11 @@ sudo apt-get update && sudo apt-get install -y openjdk-11-jdk
 ```
 sudo apt-get update && sudo apt-get install -y maven
 ```
+# Pushing to Nexus Repository
+To push to the Nexus repository, follow these steps:
+
+• When cloning the git repository, the pom.xml file will be located in the demo-backend1 directory and needs to be configured.
+• When pushing to the Nexus repository, credentials need to be configured in the .m2 file.
+```
+cd .m2
+```
