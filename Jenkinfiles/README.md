@@ -147,3 +147,10 @@ ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@IP "sudo 
 # Start Nginx
 ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@IP "service nginx start"
 • Ensure to configure your AWS deployment machine to allow traffic on port 80 (HTTP).
+
+
+# Java Deployment Jenkins Job Setup
+# Download Java File from Nexus Repository
+```
+ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@IP "curl -u jashu:12345 -O -L "http://43.204.108.122:8081/repository/maven-repo/com/sa/web/sentiment-analysis-web/mvn.1.1.0-SNAPSHOT/sentiment-analysis-web-mvn.1.1.0-20240503.080827-1.jar"
+```
