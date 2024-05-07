@@ -4,7 +4,7 @@ This repository contains scripts and instructions for building a tar file contai
 # Prerequisites
 Before you begin, ensure you have the following prerequisites:
 
-• Git installed on your local machine.
+• Git installed on your local machine.<br>
 • npm installed for React development.
 • Python installed for Python development.
 • JDK (Java Development Kit) installed for Java development.
