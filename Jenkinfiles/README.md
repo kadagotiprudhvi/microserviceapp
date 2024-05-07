@@ -19,7 +19,7 @@ git clone https://github.com/kadagotiprudhvi/microserviceapp.git
 ```
 # This command navigates to correct directory path of the file
 ```
-cd microserviceapp/react
+cd microserviceapp/demo-frontend
 ```
 # Install npm Dependencies for React
 ```
