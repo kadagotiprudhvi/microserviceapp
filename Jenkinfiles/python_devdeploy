@@ -3,12 +3,6 @@ pipeline {
     
     stages {
 
-         stage("Install Python 3 and pip") {
-            steps {
-                sh 'ssh ubuntu@18.224.72.119 apt-get update && apt-get install -y python3 python3-pip'
-            }
-        }
-        
         stage("Getting tar file from nexus") {
             steps {
                 sh "ssh ubuntu@18.224.72.119 curl -u jashu:12345 -O -L 'http://43.204.108.122:8081/repository/python-repo/pythontar-2.0.tar'"
