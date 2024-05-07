@@ -58,8 +58,26 @@ sudo apt-get update && sudo apt-get install -y maven
 # Pushing to Nexus Repository
 To push to the Nexus repository, follow these steps:
 
-• When cloning the git repository, the pom.xml file will be located in the demo-backend1 directory and needs to be configured.
+• When cloning the git repository, the pom.xml file will be located in the demo-backend1 directory and needs to be configured.<br>
 • When pushing to the Nexus repository, credentials need to be configured in the .m2 file.
 ```
 cd .m2
+```
+# In .m2 file create a file for settings.xml for credentials while maven deploy
+```
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+  <servers>
+    <server>
+      <id>maven-repo-snapshot</id>
+      <username>maven</username>
+      <password>12345</password>
+    </server>
+    <server>
+      <id>maven-repo-release</id>
+      <username>maven</username>
+      <password>12345</password>
+    </server>
+  </servers>
+</settings>
 ```
