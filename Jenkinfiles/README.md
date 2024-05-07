@@ -1,4 +1,4 @@
-# Building a Tar File of React, Python, and Java for Nexus Repository
+# Building a Tar File of React, Java, and Python for Nexus Repository
 This repository contains scripts and instructions for building a tar file containing code written in React, Python, and Java, and pushing it to a Nexus repository for artifact management
 
 # Prerequisites
@@ -39,5 +39,17 @@ tar -xzvf npm_build.tar.gz build
 ```
 # To push to nexus repo use the below command
 ```
-curl -v -u jashu:1234 npm_build.tar.gz <NEXUS_REPO_URL>/react.tar.gz
+curl -u username:password -O -L <NEXUS_URL> <NEXUS_PATH>/react.tar.gz
+```
+# This command navigates to correct directory path of the file Maven
+```
+cd micorserviceapp/demo-backend1
+```
+# To install jdk use the below command
+```
+sudo apt-get update && sudo apt-get install -y openjdk-11-jdk
+```
+# Maven install
+```
+sudo apt-get update && sudo apt-get install -y maven
 ```
