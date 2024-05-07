@@ -5,7 +5,7 @@ pipeline {
 
          stage("Install Python 3 and pip") {
             steps {
-                sh 'ssh ubuntu@18.224.72.119 sudo apt-get update && sudo apt-get install -y python3 python3-pip'
+                sh 'ssh ubuntu@18.224.72.119 apt-get update && apt-get install -y python3 python3-pip'
             }
         }
         
