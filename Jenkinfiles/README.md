@@ -165,3 +165,17 @@ To run the Java application through SSH, execute the following command:
 ```
 ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@19.234.89.09 "java -jar /home/ubuntu/latest.jar --sa.logic.api.url=http://19.234.89.09:5000 &"
 ```
+
+# Jenkins Job Setup for Python Deployment
+# Downloading Java File from Nexus Repository
+To download the Java file from the Nexus Repository, execute the following command:
+```
+ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@IP "curl -u jashu:12345 -O -L http://43.204.108.122:8081/repository/python-repo/pythonfile:1.0.0.tar.gz"
+# Install python
+```
+sudo apt-get update && sudo apt-get install -y python3
+```
+# Install pip
+```
+sudo apt-get update && sudo apt-get install -y python3-pip
+```
