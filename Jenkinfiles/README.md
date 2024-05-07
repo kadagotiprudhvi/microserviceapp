@@ -110,9 +110,23 @@ pip3 install -r requirements.txt
 ```
 tar -xzvf pythonfile:1.0.0.tar.gz demo-backend2
 ```
+
 # Push to Nexus Repository of tar file
 • Replace maven:12345 with your Nexus repository credentials and http://3.110.40.233:8081/repository/tar-repo/npm-snap:1.0.0.tar <br>
   with your Nexus repository URL and file path.
 ```
 curl -v -u maven:12345 --upload-file pythonfile:1.0.0.tar.gz "http://3.110.40.233:8081/repository/tar-repo/pythonfile:1.0.0.tar.gz"
 ```
+
+
+# Developing React, Python, and Java Projects Using Jenkins Pipeline with SSH 
+This guide illustrates how to develop React, Python, and Java projects using a Jenkins pipeline with SSH.
+# Prerequisites
+Ensure you have the following prerequisites before starting:<br>
+• Jenkins installed and configured.<br>
+• SSH access to the target servers where the projects will be developed and deployed.<br>
+• Git installed on the Jenkins server.<br>
+• npm installed for React development.<br>
+• Python installed for Python development.<br>
+• JDK (Java Development Kit) installed for Java development.<br>
+• Nexus repository where you have permissions to deploy artifacts.<br>
