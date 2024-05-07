@@ -1,2 +1,11 @@
 # Building a Tar File of React, Python, and Java for Nexus Repository
-This repository contains scripts and instructions for building a tar file containing code written in React, Python, and Java, and pushing it to a Nexus repository for artifact management.
+This repository contains scripts and instructions for building a tar file containing code written in React, Python, and Java, and pushing it to a Nexus repository for artifact management
+
+# Prerequisites
+Before you begin, ensure you have the following prerequisites:
+
+• Git installed on your local machine.
+• npm installed for React development.
+• Python installed for Python development.
+• JDK (Java Development Kit) installed for Java development.
+• Access to a Nexus repository where you have permissions to deploy artifacts.
