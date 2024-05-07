@@ -17,7 +17,7 @@ To use the script, follow the instructions below:
 ```
 git clone https://github.com/kadagotiprudhvi/microserviceapp.git
 ```
-# This command navigates to correct directory path of the file
+# Navigate to the react Directory
 ```
 cd microserviceapp/demo-frontend
 ```
