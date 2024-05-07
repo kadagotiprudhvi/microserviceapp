@@ -37,19 +37,21 @@ npm run build
 ```
 tar -xzvf npm_build.tar.gz build
 ```
-# To push to nexus repo use the below command
+# Push to Nexus Repository
+• Replace maven:12345 with your Nexus repository credentials and http://3.110.40.233:8081/repository/tar-repo/npm-snap:1.0.0.tar with your Nexus repository URL and 
+  file path.
 ```
-curl -u username:password -O -L <NEXUS_URL> <NEXUS_PATH>/react.tar.gz
+curl -v -u maven:12345 --upload-file npm_snap:1.0.0.tar "http://3.110.40.233:8081/repository/tar-repo/npm-snap:1.0.0.tar"
 ```
-# This command navigates to correct directory path of the file Maven
+# Navigate to the Maven Directory
 ```
 cd micorserviceapp/demo-backend1
 ```
-# To install jdk use the below command
+# Install JDK
 ```
 sudo apt-get update && sudo apt-get install -y openjdk-11-jdk
 ```
-# Maven install
+# Download Maven Dependencies
 ```
 sudo apt-get update && sudo apt-get install -y maven
 ```
