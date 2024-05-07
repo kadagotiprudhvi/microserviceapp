@@ -140,7 +140,7 @@ ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@IP "curl 
 ```
 ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@IP "tar -xf npmtar.1.1.7.tar"
 ```
-# After unzip the copy the content of build, use the below command
+# After unzip copy the content of build, use the below command
 ```
 ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@IP "cd microserviceapp/demo-frontend/build/* /var/www/html"
 ```
