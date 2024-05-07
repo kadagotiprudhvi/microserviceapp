@@ -33,3 +33,11 @@ npm install
 ```
 npm run build
 ```
+# Package the React Files for Nexus Repository:
+```
+tar -xzvf npm_build.tar.gz build
+```
+# To push to nexus repo use the below command
+```
+curl -v -u jashu:1234 npm_build.tar.gz <NEXUS_REPO_URL>/react.tar.gz
+```
