@@ -137,15 +137,25 @@ Ensure you have the following prerequisites before starting:<br>
 ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@IP "curl -u jashu:12345 -O -L http://43.204.108.122:8081/repository/npm-repo/npmtar.1.1.7.tar"
 ```
 # Unzip the file
+```
 ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@IP "tar -xf npmtar.1.1.7.tar"
+```
 # After unzip the copy the content of build, use the below command
+```
 ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@IP "cd microserviceapp/demo-frontend/build/* /var/www/html"
+```
 # Install npm
+```
 ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@IP "sudo apt-get update && sudo apt-get install -y npm"
+```
 # Install Ngnix
+```
 ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@IP "sudo apt-get update && sudo apt-get install -y nginx"
+```
 # Start Nginx
+```
 ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@IP "service nginx start"
+```
 • Ensure to configure your AWS deployment machine to allow traffic on port 80 (HTTP).
 
 
