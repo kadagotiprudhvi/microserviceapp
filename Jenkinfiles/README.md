@@ -149,8 +149,19 @@ ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@IP "servi
 • Ensure to configure your AWS deployment machine to allow traffic on port 80 (HTTP).
 
 
-# Java Deployment Jenkins Job Setup
-# Download Java File from Nexus Repository
+# Jenkins Job Setup for Java Deployment
+# Downloading Java File from Nexus Repository
+To download the Java file from the Nexus Repository, execute the following command:
 ```
 ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@IP "curl -u jashu:12345 -O -L "http://43.204.108.122:8081/repository/maven-repo/com/sa/web/sentiment-analysis-web/mvn.1.1.0-SNAPSHOT/sentiment-analysis-web-mvn.1.1.0-20240503.080827-1.jar"
+```
+# Installing Java
+To install Java, execute the following command:
+```
+ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@19.234.89.09 "sudo apt-get update && sudo apt-get install -y openjdk-11-jdk"
+```
+# Running the Java Application via SSH
+To run the Java application through SSH, execute the following command:
+```
+ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@19.234.89.09 "java -jar /home/ubuntu/latest.jar --sa.logic.api.url=http://19.234.89.09:5000 &"
 ```
