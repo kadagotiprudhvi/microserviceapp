@@ -273,4 +273,4 @@ stage("ssh & dockerpull") {
 }
 ```
 # <h2>Configuration</h2>
-# **1.** <h3>Jenkins Configuration:<h3>
+# 1. <h3>Jenkins Configuration:<h3>
