@@ -247,3 +247,30 @@ stage("Build & making docker image") {
 ```
 # <h3>Docker Tagging</h3>
 This stage tags the Docker image with a specified tag (1.1.2) and prepares it for pushing to the Docker registry.
+```
+stage("docker tag") {
+    steps {
+        sh "docker tag mvnimg:1.1.2 prudhvi575/maven_repo:1.1.2"
+    }
+}
+```
+# <h3>Docker Push</h3>
+This stage pushes the tagged Docker image to the Docker registry.
+```
+stage('docker push') {
+    steps {
+        sh "docker push prudhvi575/maven_repo:1.1.2"
+    }
+}
+```
+# <h3>SSH and Docker Pull</h3>
+This stage connects to a remote server via SSH and pulls the Docker image from the registry.
+```
+stage("ssh & dockerpull") {
+    steps {
+        sh "ssh ubuntu@172.31.38.121 'sudo docker pull prudhvi575/maven_repo:1.1.2'"
+    }
+}
+```
+# <h2>Configuration</h2>
+# **1.** <h3>Jenkins Configuration:<h3>
