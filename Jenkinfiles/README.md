@@ -245,5 +245,5 @@ stage("Build & making docker image") {
     }
 }
 ```
-#Docker Tagging
+# Docker Tagging
 This stage tags the Docker image with a specified tag (1.1.2) and prepares it for pushing to the Docker registry.
