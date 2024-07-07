@@ -238,9 +238,12 @@ This repository contains a Jenkins pipeline configuration for automating the Doc
 
 This stage builds the Docker image from the `Dockerfile` located in the `demo-backend1` directory.
 
-```groovy
+```
 stage("Build & making docker image") {
     steps {
         sh "cd demo-backend1 && docker build -t mvnimg:1.1.2 . -f Dockerfile"
     }
 }
+```
+#Docker Tagging
+This stage tags the Docker image with a specified tag (1.1.2) and prepares it for pushing to the Docker registry.
