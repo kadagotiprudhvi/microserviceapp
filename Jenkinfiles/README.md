@@ -275,3 +275,25 @@ stage("ssh & dockerpull") {
 
 # <h2>Configuration</h2>
 **1.** Jenkins Configuration:
+* Ensure Jenkins has Docker installed and configured.
+* Add Docker credentials to Jenkins if you are using a private Docker registry.* 
+* Configure SSH credentials for Jenkins to access the remote server.
+
+**2.** Dockerfile:
+* Place your Dockerfile in the demo-backend1 directory or update the pipeline script to point to the correct location.
+
+**3.** Jenkinsfile:
+* Copy the provided Jenkins pipeline script (Jenkinsfile) into your project repository.
+
+**4** Docker Hub/Registry:
+* Ensure you have the appropriate access to push images to the Docker Hub or your chosen Docker registry.
+
+# Running the Pipeline
+**1.** Commit and push the Jenkinsfile to your repository.
+**2.** Create a new Jenkins job or update an existing one to use this pipeline.
+**3.** Configure the job to poll your repository for changes or trigger it manually.
+
+# References
+* Jenkins Documentation
+* Docker Documentation
+* Using SSH in Jenkins
