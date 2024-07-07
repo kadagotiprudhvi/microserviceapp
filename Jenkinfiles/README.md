@@ -202,3 +202,45 @@ To run the Python application through SSH, execute the following command:
 ```
 ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@IP Address "python3 sentiment_analysis.py"
 ```
+
+# Jenkins Docker Pipeline
+
+This `README.md` file provides instructions for building, tagging, pushing, and deploying a Docker image using a Jenkins pipeline.
+
+## Table of Contents
+
+1. [Introduction](#introduction)
+2. [Prerequisites](#prerequisites)
+3. [Pipeline Stages](#pipeline-stages)
+   - [Build and Docker Image Creation](#build-and-docker-image-creation)
+   - [Docker Tagging](#docker-tagging)
+   - [Docker Push](#docker-push)
+   - [SSH and Docker Pull](#ssh-and-docker-pull)
+4. [Configuration](#configuration)
+5. [Running the Pipeline](#running-the-pipeline)
+6. [References](#references)
+
+## Introduction
+
+This repository contains a Jenkins pipeline configuration for automating the Docker build, tag, push, and deployment process. It is designed to streamline the CI/CD process by integrating Docker with Jenkins.
+
+## Prerequisites
+
+- Jenkins installed and running.
+- Docker installed on both the Jenkins server and the target server.
+- SSH access to the target server with appropriate permissions.
+- Docker Hub account or other Docker registry credentials for pushing the image.
+- Configured Jenkins credentials for Docker Hub (if private repository) and SSH.
+
+## Pipeline Stages
+
+### Build and Docker Image Creation
+
+This stage builds the Docker image from the `Dockerfile` located in the `demo-backend1` directory.
+
+```groovy
+stage("Build & making docker image") {
+    steps {
+        sh "cd demo-backend1 && docker build -t mvnimg:1.1.2 . -f Dockerfile"
+    }
+}
