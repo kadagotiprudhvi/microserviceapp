@@ -272,6 +272,13 @@ stage("ssh & dockerpull") {
     }
 }
 ```
+# <h3>Docker Run</h3>
+This stage connects to a remote server via SSH and run the Docker image.
+stage("Running Docker Image") {
+    steps {
+        sh "ssh ubuntu@18.219.233.229 'sudo docker run -d prudhvi575/maven_repo:1.1.2'"
+    }
+}
 
 # <h2>Configuration</h2>
 **1.** Jenkins Configuration:
